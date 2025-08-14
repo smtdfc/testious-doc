@@ -18,6 +18,8 @@ module.exports = {
       "@assets": path.join(__dirname, "./assets"),
       "@components": path.join(__dirname, "./src/components"),
       "@pages": path.join(__dirname, "./src/pages"),
+      "@layouts": path.join(__dirname, "./src/layouts"),
+      "@services": path.join(__dirname, "./src/services"),
       "@styles": path.join(__dirname, "./src/styles"),
     },
     extensions: ['.tsx', '.ts', '.js', '.jsx'],

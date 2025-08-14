@@ -1,3 +1,8 @@
 {
-  "introduction":"Giới thiệu"
+	"introduction": "Giới thiệu",
+	"installation":"Cài đặt",
+	"use":"Sử dụng",
+	"components":"Các thành phần chính",
+	"assertion":"Assertion",
+	"configuration":"Hướng dẫn cấu hình "
 }

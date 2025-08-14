@@ -1,9 +1,8 @@
-import {Component,createRef} from '@rumious/core';
+import {Component,Fragment,createRef} from '@rumious/core';
 import Logo from '@assets/testious.png';
 
-interface NavbarProps{}
 
-export default class Navbar extends Component<Navbar>{
+export default class Navbar extends Component<{}>{
   private menuRef = createRef<HTMLDivElement>();
   
   openMenu(){
@@ -22,7 +21,7 @@ export default class Navbar extends Component<Navbar>{
             <button on:click={()=> this.openMenu()} class="navbar-toggle-btn material-symbols-outlined">close</button>
             <ul>
               <li><a href="#">Home</a></li>
-              <li><a href="#">Documentation</a></li>
+              <li><a href="#/documentation/introduction">Documentation</a></li>
               <li><a href="#">About</a></li>
               <li><a href="#">Github</a></li>
             </ul>

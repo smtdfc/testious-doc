@@ -5,11 +5,16 @@ import {
 import initRouter from './router';
 import Navbar from '@components/Navbar';
 import Footer from '@components/Footer';
+import "@services/content";
 import "./styles/index.css";
 
+const rootElement = document.getElementById("app");
+if(!rootElement){
+  throw new Error("Cannot find root element ");
+}
 
 const app = createApp({
-  root: document.getElementById("app")
+  root: rootElement
 });
 
 const router = initRouter(app);
@@ -20,6 +25,7 @@ app.setRootLayout(
       {router.rootSlot}
     </div>
     <Footer/>
+    <div id="mainOverlay" class="overlay"/>
   </Fragment>
 );
 

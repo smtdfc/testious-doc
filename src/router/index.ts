@@ -9,8 +9,18 @@ export default function(app: App):RouterModule {
   router.route([
     {
       path: "",
-      component:createLoader(async () => (await import("@pages/home")).Page),
+      component:createLoader(async () => (await import("@pages/home")).default),
     },
+    {
+      path:"documentation",
+      layout:createLoader(async ()=> (await import("@layouts/docs")).default),
+      childs:[
+        {
+          path:":name",
+          component:createLoader(async () => (await import("@pages/doc")).default),
+        }
+      ]
+    }
   ]);
   
   return router ;

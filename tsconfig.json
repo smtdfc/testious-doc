@@ -9,6 +9,12 @@
 		"jsxFactory": "RUMIOUS.createElement",
 		"jsxFragmentFactory": "RUMIOUS.Fragment",
 		"sourceMap": true,
-		"paths":{}
+		"baseUrl": "src",
+		"paths": {
+			"@components/*": ["components/*"],
+			"@pages/*": ["pages/*"],
+			"@layouts/*": ["layouts/*"],
+			"@services/*": ["services/*"]
+		}
 	}
 }

@@ -1,16 +1,19 @@
 {
   "dependencies": {
     "@rumious/browser": "^0.0.1",
-    "@rumious/core": "^3.0.0",
-    "@rumious/router": "^0.0.1",
+    "@rumious/core": "^3.0.2",
+    "@rumious/router": "^0.0.3",
+    "ky": "^1.8.2",
+    "markdown-it": "^14.1.0",
     "prismjs": "^1.30.0"
   },
   "devDependencies": {
-    "@rumious/cli":"*",
-    "webpack-cli":"*",
+    "@rumious/cli": "*",
     "@rumious/webpack-loader": "^0.0.1",
+    "@types/prismjs": "^1.26.5",
     "css-loader": "^7.1.2",
     "mini-css-extract-plugin": "^2.9.4",
-    "ts-loader": "^9.5.2"
+    "ts-loader": "^9.5.2",
+    "webpack-cli": "*"
   }
 }
