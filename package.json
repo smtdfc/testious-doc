@@ -1,4 +1,7 @@
 {
+	"scripts":{
+		"build":"mkdir -p ./public/docs && cp -pr ./docs/* ./public/docs/ && rumious prod"
+	},
   "dependencies": {
     "@rumious/browser": "^0.0.1",
     "@rumious/core": "^3.0.2",
