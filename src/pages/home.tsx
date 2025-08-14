@@ -1,10 +1,13 @@
 import { Component } from '@rumious/core';
+import {RouteProps,RouteComponent} from '@rumious/router';
 import Logo from '@assets/testious.png';
 import Prism from "prismjs";
 import styles from '@styles/pages/home.module.css';
 import "prismjs/themes/prism.css";
 
-export class Page extends Component {
+export default class Page extends Component<RouteProps>{
+  static tagName ="hello-page";
+  
   onRender(){
     Prism.highlightAll();
   }

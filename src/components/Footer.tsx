@@ -1,7 +1,7 @@
 import { Component } from '@rumious/core';
 
 
-export default class Footer extends Component {
+export default class Footer extends Component<{}> {
   template() {
     return (
       <footer class="footer">
