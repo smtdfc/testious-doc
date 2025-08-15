@@ -127,10 +127,12 @@ a {
     display: block !important;
     transform: translateX(-100%);
     transition: ease 0.3s all;
+    opacity: 0;
   }
   
   .navbar-menu.active {
     transform: translateX(0%);
+    opacity: 1;
   }
   
   .navbar-menu ul {

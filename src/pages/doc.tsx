@@ -21,7 +21,8 @@ export default class Page extends Component < RouteProps > {
   
   onParamsChange() {
     let { routeData: { params } } = this.props;
-    this.renderPageContent(params.getKey("name"));
+    let pageName = params.getKey("name");
+    if(pageName) this.renderPageContent(pageName);
   }
   
   onRender() {

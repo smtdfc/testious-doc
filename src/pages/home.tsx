@@ -1,6 +1,6 @@
 import { Component } from '@rumious/core';
 import {RouteProps,RouteComponent} from '@rumious/router';
-import Logo from '@assets/testious.png';
+import Logo from '@assets/testious.webp';
 import Prism from "prismjs";
 import styles from '@styles/pages/home.module.css';
 import "prismjs/themes/prism.css";

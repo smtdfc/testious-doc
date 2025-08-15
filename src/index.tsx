@@ -25,7 +25,7 @@ app.setRootLayout(
       {router.rootSlot}
     </div>
     <Footer/>
-    <div class="overlay" style="opacity:0;pointer-events:none;"></div>
+    <div class="overlay" id="mainOverlay" style="opacity:0;pointer-events:none;"></div>
   </Fragment>
 );
 
