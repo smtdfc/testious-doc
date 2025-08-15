@@ -20,10 +20,9 @@ export default class Navbar extends Component<{}>{
           <div class="navbar-menu" ref={this.menuRef}>
             <button on:click={()=> this.openMenu()} class="navbar-toggle-btn material-symbols-outlined">close</button>
             <ul>
-              <li><a href="#">Home</a></li>
+              <li><a href="#/">Home</a></li>
               <li><a href="#/documentation/introduction">Documentation</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Github</a></li>
+              <li><a href="https://github.com/smtdfc/testious">Github</a></li>
             </ul>
           </div>
         </nav>

@@ -22,18 +22,23 @@ class Menu extends Component < { controller: Context < object > } > {
     });
   }
   
-  async template() {
+  closeMenu(){
     let { controller } = this.props;
+    controller.emit("close",{});
+  }
+  
+  async template() {
+    
     let pageIndex = AppContext.getKey('pageIndex');
-    if (Object.keys(pageIndex).length == 0) pageIndex = await ContentService.getListPageByLang("vn");
+    if (Object.keys(pageIndex).length == 0) pageIndex = await ContentService.getListPage();
     
     return (
       <div class={styles.menu} ref={this.menuRef}>
-        <button class={styles.menuBtn +" material-symbols-outlined"} on:click={()=> controller.emit("close",{})} >close</button>
+        <button class={styles.menuBtn +" material-symbols-outlined"} on:click={()=>this.closeMenu()} >close</button>
         <ul>
           <For
             template={
-              (d: unknown)=> <li><a href={"#/documentation/"+d}>{pageIndex[d]}</a></li>
+              (d: string)=> <li ><a on:click={()=>this.closeMenu()} href={"#/documentation/"+d}>{pageIndex[d]}</a></li>
             }
             list={AppContext.reactiveKey('pageMap')}
           />

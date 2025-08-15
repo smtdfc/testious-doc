@@ -14,18 +14,20 @@ export class ContentService {
     }
   }
   
-  static async getPageContent(lang: string, name: string): Promise < string > {
+  static async getPageContent( name: string): Promise < string > {
     try {
-      const data = await ky.get(`/docs/${lang}/${name}.md`).text();
+      const currentLang = appContext.getKey("lang");
+      const data = await ky.get(`/docs/${currentLang}/${name}.md`).text();
       return data;
     } catch (err) {
       throw err;
     }
   }
   
-  static async getListPageByLang(lang: string): Promise < Record < string, string >> {
+  static async getListPage(): Promise < Record < string, string >> {
     try {
-      const data = await ky.get(`/docs/${lang}/dec.json`).json() as any;
+      const currentLang = appContext.getKey("lang");
+      const data = await ky.get(`/docs/${currentLang}/dec.json`).json() as any;
       appContext.setKey('pageIndex', data);
       return data;
     } catch (err) {

@@ -9,8 +9,8 @@ export default class Footer extends Component<{}> {
           <p>Testious v1.0.0 — by <strong>smtdfc team</strong>. <br/>Made with ❤️ and zero sleep</p>
           <br/>
           <p>
-            <a href="https://github.com/your-repo/testious" target="_blank">GitHub</a> |
-            <a href="/docs">Docs</a> |
+            <a href="https://github.com/smtdfc/testious" target="_blank">GitHub</a> |
+            <a href="#/documentation/introduction">Docs</a> |
           </p>
         </div>
       </footer>

@@ -126,11 +126,13 @@ a {
     background: white !important;
     display: block !important;
     transform: translateX(-100%);
+    display: none!important;
     transition: ease 0.3s all;
     opacity: 0;
   }
   
   .navbar-menu.active {
+    display:block!important;
     transform: translateX(0%);
     opacity: 1;
   }
@@ -181,6 +183,7 @@ a {
 
 .container {
   margin-top: 5rem;
+  min-height: 100vh;
 }
 
 .list{
@@ -216,6 +219,6 @@ a {
 }
 
 .overlay.active {
-  opacity: 1;
+  opacity: 1!important;
   pointer-events: auto;
 }
