@@ -8,3 +8,4 @@ declare module '*.module.css' {
   export default classes;
 }
 
+export type PageMap = Record<string, PageMap | null>;

@@ -1,8 +1,20 @@
 {
-	"introduction": "Giới thiệu",
-	"installation":"Cài đặt",
-	"use":"Sử dụng",
-	"components":"Các thành phần chính",
-	"assertion":"Assertion",
-	"configuration":"Hướng dẫn cấu hình "
+	"introduction": {
+		"$title": "Giới thiệu"
+	},
+	"installation": {
+		"$title": "Cài đặt"
+	},
+	"use": {
+		"$title": "Sử dụng"
+	},
+	"components": {
+		"$title": "Các thành phần chính"
+	},
+	"assertion": {
+		"$title": "Assertion"
+	},
+	"configuration": {
+		"$title":"Hướng dẫn cấu hình "
+	}
 }

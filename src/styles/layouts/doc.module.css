@@ -52,6 +52,11 @@
   padding: 0.8rem;
 }
 
+.menu ul>li>ul{
+  border-left: solid 1px black;
+  margin-left:0.5rem ;
+}
+
 .open-menu-btn {
   background: transparent;
   padding: 0.5rem;

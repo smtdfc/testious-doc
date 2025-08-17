@@ -1,10 +1,11 @@
 import {Context} from '@rumious/core';
+import {PageMap} from '../types'
 
 
 interface AppContext{
   lang:string;
-  pageMap: string[];
-  pageIndex: Record<string, string>;
+  pageMap: PageMap;
+  pageIndex: Record<string, any>;
 }
 
 let currentLang = localStorage.getItem("lang");
@@ -15,7 +16,7 @@ if(!currentLang){
 
 const appContext = new Context<AppContext>({
   lang:currentLang,
-  pageMap:[],
+  pageMap:{},
   pageIndex:{}
 });
 

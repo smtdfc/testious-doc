@@ -1,13 +1,13 @@
 import ky from 'ky';
 import appContext from '../context';
 import { watch } from '@rumious/core';
-
+import {PageMap} from '../types'
 
 export class ContentService {
   static async getPageMap(): Promise < string[] > {
     try {
       const data = await ky.get('/docs/list.json').json() as any;
-      appContext.setKey('pageMap', data.list as string[]);
+      appContext.setKey('pageMap', data as PageMap);
       return data.list;
     } catch (err) {
       throw err;

@@ -1,10 +1,7 @@
 {
-  "list":[
-    "introduction",
-    "installation",
-    "use",
-    "components",
-    "assertion",
-    "configuration"
-  ]
+  "introduction":null,
+  "installation":null,
+  "use":null,
+  "components":null,
+  "assertion":null
 }

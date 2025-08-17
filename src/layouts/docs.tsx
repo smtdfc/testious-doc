@@ -3,6 +3,28 @@ import { RouteProps, RouteComponent } from '@rumious/router';
 import { ContentService } from '@services/content';
 import AppContext from '../context';
 import styles from '@styles/layouts/doc.module.css';
+import {PageMap} from '../types'
+
+
+function renderMenu(controller,node:PageMap,index:Record<string, any>) {
+  let keys = Object.keys(node).filter(v => v != "$title");
+  return (
+    <ul>
+      <For
+        list={keys}
+        template={(value: string) => {
+          if(node[value] && Object.keys(node[value]).length > 0) return (
+            <li>
+              <a>{index[value]["$title"]}</a>
+              {renderMenu(controller,node[value], index[value])}
+           </li>
+          );
+          return <li><a on:click={()=> controller.emit("close")} href={`#/documentation/${value}`}>{index[value]["$title"]}</a></li>
+        }}
+      />
+    </ul>
+  );
+}
 
 
 class Menu extends Component < { controller: Context < object > } > {
@@ -28,21 +50,19 @@ class Menu extends Component < { controller: Context < object > } > {
   }
   
   async template() {
-    
+    let { controller } = this.props;
     let pageIndex = AppContext.getKey('pageIndex');
     if (Object.keys(pageIndex).length == 0) pageIndex = await ContentService.getListPage();
-    
     return (
       <div class={styles.menu} ref={this.menuRef}>
-        <button class={styles.menuBtn +" material-symbols-outlined"} on:click={()=>this.closeMenu()} >close</button>
-        <ul>
-          <For
-            template={
-              (d: string)=> <li ><a on:click={()=>this.closeMenu()} href={"#/documentation/"+d}>{pageIndex[d]}</a></li>
-            }
-            list={AppContext.reactiveKey('pageMap')}
-          />
-        </ul>
+        <button class={styles.menuBtn + " material-symbols-outlined"} on:click={() => this.closeMenu()}>
+          close
+        </button>
+        {renderMenu(
+          controller,
+          AppContext.getKey("pageMap"),
+          pageIndex
+        )}
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import {Component,Fragment,createRef} from '@rumious/core';
-import Logo from '@assets/testious.webp';
+import Logo from '@assets/logo.webp';
 
 
 export default class Navbar extends Component<{}>{
