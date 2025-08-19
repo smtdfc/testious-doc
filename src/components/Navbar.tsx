@@ -1,16 +1,17 @@
-import {Component,Fragment,createRef} from '@rumious/core';
+import { Component, Fragment, createRef } from '@rumious/core';
 import Logo from '@assets/logo.webp';
 
 
-export default class Navbar extends Component<{}>{
-  private menuRef = createRef<HTMLDivElement>();
+export default class Navbar extends Component < {} > {
+  static tagName = "page-navbar";
+  private menuRef = createRef < HTMLDivElement > ();
   
-  openMenu(){
+  openMenu() {
     this.menuRef.toggleClass("active");
   }
   
-  template(){
-    return(
+  template() {
+    return (
       <Fragment>
         <nav class="navbar">
           <div class="navbar-header">

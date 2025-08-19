@@ -6,7 +6,7 @@ import "prismjs/themes/prism.css";
 import Logo from '@assets/logo.webp';
 
 export default class Page extends Component < RouteProps > {
-  static tagName = "hello-page";
+  static tagName = "home-page";
   
   onRender() {
     Prism.highlightAll();

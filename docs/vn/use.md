@@ -22,14 +22,17 @@ touch index.js
 ```
 
 Khai báo nó trong file testious.config.json của bạn.
-Nếu bạn đang làm việc với Node.js, hãy sử dụng key `nodeTestEntry`:
+Nếu bạn đang làm việc với Node.js, hãy sử dụng key `entry.node`:
 ```json
-{
-  "nodeTestEntry": "index.js"
-}
+{  
+ "runners": ["node","browser"],
+  "entry": {
+    "node": "node/index.js",
+  }
+}}
 ```
 
-__Note__: Nếu bạn đang làm việc với môi trường trình duyệt, hãy thay bằng `browserTestEntry`.
+__Note__: Nếu bạn đang làm việc với môi trường trình duyệt, hãy thay bằng `entry.browser`.
 
 ### 3. Tạo File Test
 Testious cung cấp một lệnh CLI tiện lợi để tạo các file test. Để tạo một file test có tên hello, bạn chỉ cần chạy:

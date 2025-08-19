@@ -2,6 +2,8 @@ import { Component } from '@rumious/core';
 
 
 export default class Footer extends Component<{}> {
+  static tagName = "page-footer";
+  
   template() {
     return (
       <footer class="footer">

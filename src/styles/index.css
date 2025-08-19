@@ -36,6 +36,12 @@ h6 {
   margin: 1rem 0;
 }
 
+pre, code {
+  font-family: 'Fira Code', 'JetBrains Mono', 'Source Code Pro', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 .navbar {
   position: fixed;
   top: 0;
