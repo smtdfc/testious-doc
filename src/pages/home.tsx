@@ -16,7 +16,7 @@ export default class Page extends Component < RouteProps > {
     return (
       <div class={styles.page}>
         <section class={styles.topSection}>
-          <img src={Logo}/>
+          <img alt="hero-img" src={Logo} width="200" height="200" fetchpriority="high" decoding="async" />          
           <p class="p-2" style="max-width:80%" > Simple testing framework designed to help developers write, organize, and run tests effortlessly with a clean and expressive API. </p>
           <div class={styles.btnGroup}>
             <button style="width:200px" class={styles.cab}>Getting started </button>
@@ -80,8 +80,13 @@ export default class Page extends Component < RouteProps > {
             Create a <code>node/index.js</code> file and add it to the{" "}
             <code>testious.config.json</code> file
           </p>
-          <pre class={styles.code}><code class="language-json">{`{"nodeTestEntry": "node/index.js"}`}</code></pre>
-    
+          <pre class={styles.code}><code class="language-json">{`{
+  "runners": ["node"],
+  "entry": {
+    "node": "node/index.js",
+  }
+}`}</code></pre>
+
           <h3>Create test group</h3>
           <p>Use this command:</p>
           <pre class={styles.code}><code class="language-bash">{`testious create file node/hello`}</code></pre>

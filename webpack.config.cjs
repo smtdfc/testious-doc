@@ -9,7 +9,12 @@ module.exports = {
   output: {
     filename: 'index.min.js',
     path: path.resolve(__dirname, 'public/dist'),
-    clean: true
+    clean: true,
+    
+  },
+  optimization: {
+    splitChunks: false,
+    runtimeChunk: false,
   },
   mode: isProduction ? "production" : "development",
   devtool: isProduction ? false : 'source-map',
@@ -57,7 +62,10 @@ module.exports = {
     },
     {
       test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-      type: 'asset/resource'
+      type: 'asset/resource',
+      generator: {
+        filename: '../assets/[name][hash][ext][query]'
+      }
     },
     {
       test: /\.module\.css$/i,
@@ -74,7 +82,7 @@ module.exports = {
           esModule: true,
           modules: {
             exportLocalsConvention: 'camelCase',
-            namedExport: false, 
+            namedExport: false,
           },
           importLoaders: 1,
         },
